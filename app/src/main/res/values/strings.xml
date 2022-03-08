@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">taxCalculator</string>
+    <string name="tvCalculator">Calculadora de impuestos</string>
+    <string name="tvDescription">Por favor ingrese seleccione el tipo de impuesto que desea calcular:</string>
+    <string name="btn1">Impuesto predial</string>
+    <string name="btn2">Impuesto de vehículo</string>
+    <string name="btn3">Retención en la fuente</string>
+
+</resources>
