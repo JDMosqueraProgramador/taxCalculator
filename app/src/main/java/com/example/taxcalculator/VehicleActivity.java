@@ -63,36 +63,49 @@ public class VehicleActivity extends AppCompatActivity {
 
     public void calculateTax(View view) {
 
-        int typeVehicle = sprType.getSelectedItemPosition();
-        Double valueVehicle = Double.parseDouble(etValueVehicle.getText().toString());
+        if(etValueVehicle.getText().toString().matches("")) {
 
-        double tax = 0;
+            Toast.makeText(this,"Debe completar todos los campos", Toast.LENGTH_SHORT).show();
 
-        if(typeVehicle == 0) {
+        } else {
 
-            if(sprService.getSelectedItemPosition() == 0) {
+            int typeVehicle = sprType.getSelectedItemPosition();
+            Double valueVehicle = Double.parseDouble(etValueVehicle.getText().toString());
 
-                if (valueVehicle > 0 && valueVehicle < 50954000) {
-                    tax = valueVehicle * 0.015;
-                } else if (valueVehicle > 50954000 && valueVehicle < 114644000) {
-                    tax = valueVehicle * 0.025;
-                } else if (valueVehicle > 114644000) {
-                    tax = valueVehicle * 0.035;
+            double tax = 0;
+
+            try {
+
+            } catch (Exception e){
+                Toast.makeText(this,"Ha ocurrido un error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+            if (typeVehicle == 0) {
+
+                if (sprService.getSelectedItemPosition() == 0) {
+
+                    if (valueVehicle > 0 && valueVehicle < 50954000) {
+                        tax = valueVehicle * 0.015;
+                    } else if (valueVehicle > 50954000 && valueVehicle < 114644000) {
+                        tax = valueVehicle * 0.025;
+                    } else if (valueVehicle > 114644000) {
+                        tax = valueVehicle * 0.035;
+                    }
+
+                } else {
+                    tax = valueVehicle * 0.005;
                 }
 
             } else {
-                tax = valueVehicle * 0.005;
+                if (sprService.getSelectedItemPosition() == 0) {
+                    tax = 0;
+                } else {
+                    tax = valueVehicle * 0.015;
+                }
             }
 
-        } else {
-            if(sprService.getSelectedItemPosition() == 0) {
-                tax = 0;
-            } else {
-                tax = valueVehicle * 0.015;
-            }
+            tvTax.setText("$" + String.format("%.2f", tax));
+
         }
-
-        tvTax.setText("$" + Double.toString(tax));
 
     }
 }
