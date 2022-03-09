@@ -90,6 +90,7 @@
         android:layout_width="119dp"
         android:layout_height="54dp"
         android:layout_marginBottom="36dp"
+        android:onClick="findValuePropierty"
         android:text="@string/btnCalculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

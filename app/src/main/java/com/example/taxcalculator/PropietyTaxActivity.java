@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class PropietyTaxActivity extends AppCompatActivity {
 
     EditText value;
     private Spinner typeSpinner;
+    TextView txtSalida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class PropietyTaxActivity extends AppCompatActivity {
 
         value  = (EditText) findViewById(R.id.ptxtValue);
         typeSpinner = (Spinner) findViewById(R.id.spinnerTypeHouse);
+        txtSalida = (TextView) findViewById(R.id.txtViewAnnual);
+
         rangeMax = new int[] {124150000,132299000,152306000,172315000,192322000,212330000,232338000,252345000,285691000,319039000,
         352384000,385730000,419077000,452423000,485769000,519116000,552462000,599147000,645832000,692515000,739202000,785885000,
         832570000,879255000,925940000,1092671000,1259404000,1426135000,1600622000,1600622001};
@@ -64,10 +68,19 @@ public class PropietyTaxActivity extends AppCompatActivity {
         int arrayIndex = typeSpinner.getSelectedItemPosition();
         double eigenValue = Double.parseDouble(value.getText().toString());
         double result = 0;
+        double subTotal = 0;
 
         switch (arrayIndex){
 
             case 0:
+                if ((eigenValue>=rangeMin[0]) && (eigenValue>=rangeMax[0])) {
+
+                    subTotal = eigenValue * rate[0];
+                    result = subTotal / 1000;
+                    txtSalida.setText(String.valueOf(result));
+
+                }
+                break;
 
 
         }
