@@ -6,6 +6,11 @@
     <string name="btn1">Impuesto predial</string>
     <string name="btn2">Impuesto de vehículo</string>
     <string name="btn3">Retención en la fuente</string>
+    <string name="btnCalculatorRetention">Calcular retencion en la fuente</string>
+    <string name="txtVBaseUVT">Base UVT</string>
+    <string name="txtVBaseMinimaPesos">Base minima en pesos</string>
+    <string name="txtVPorcentajeRetencion">Porcentaje de retención</string>
+    <string name="txtMensajeSalidaRetencion">La retencion es de</string>
     <string name="tvVehicle">Impuesto vehicular</string>
     <string name="tvVehicleDesc">Por favor, seleccione los datos de su vehículo:</string>
     <string name="tvTypeVehicle">Tipo de vehículo</string>
