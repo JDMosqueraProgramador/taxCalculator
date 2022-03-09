@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AA-UNAULA/5-semestre/pm/impuestos/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/AA-UNAULA/5-semestre/pm/impuestos/app/src/main/res/layout/activity_propiety_tax.xml" value="0.13360507246376813" />
-        <entry key="..\:/AA-UNAULA/5-semestre/pm/impuestos/app/src/main/res/layout/activity_retention.xml" value="0.25" />
-        <entry key="..\:/AA-UNAULA/5-semestre/pm/impuestos/app/src/main/res/layout/activity_vehicle.xml" value="0.13360507246376813" />
-        <entry key="..\:/AA-UNAULA/5-semestre/pm/impuestos/app/src/main/res/layout/btn_spinner_layout.xml" value="0.12" />
+        <entry key="..\:/ALEXIS/UNAULA/QUINTOSEMESTRE/taxCalculator/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/ALEXIS/UNAULA/QUINTOSEMESTRE/taxCalculator/app/src/main/res/layout/activity_propiety_tax.xml" value="0.33" />
+        <entry key="..\:/ALEXIS/UNAULA/QUINTOSEMESTRE/taxCalculator/app/src/main/res/layout/activity_retention.xml" value="0.25" />
+        <entry key="..\:/ALEXIS/UNAULA/QUINTOSEMESTRE/taxCalculator/app/src/main/res/layout/activity_vehicle.xml" value="0.25" />
+        <entry key="..\:/ALEXIS/UNAULA/QUINTOSEMESTRE/taxCalculator/app/src/main/res/layout/btn_spinner_layout.xml" value="0.33" />
+        <entry key="..\:/All/Universidad/Semestre 5/Programacion de dispositivos moviles/apps/calculator predial/app/src/main/res/layout/activity_propiety_tax.xml" value="0.25" />
         <entry key="..\:/Projects/JavaAndroid/taxCalculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Projects/JavaAndroid/taxCalculator/app/src/main/res/layout/activity_propiety_tax.xml" value="0.1" />
         <entry key="..\:/Projects/JavaAndroid/taxCalculator/app/src/main/res/layout/activity_retention.xml" value="0.2" />
