@@ -7,4 +7,103 @@
         android:layout_height="match_parent"
         tools:context=".PropietyTaxActivity">
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="280dp"
+        android:text="@string/tv1"
+        app:layout_constraintEnd_toStartOf="@+id/txtViewTrimester"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewTypeHouse" />
+
+    <TextView
+        android:id="@+id/tw2"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="348dp"
+        android:text="@string/tv2"
+        app:layout_constraintEnd_toStartOf="@+id/txtViewAnnual"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewTypeHouse" />
+
+    <TextView
+        android:id="@+id/txtViewAnnual"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="124dp"
+        android:text="@string/txtViewAnnual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewTrimester"
+        android:layout_width="123dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/txtViewTrimester"
+        app:layout_constraintBottom_toTopOf="@+id/txtViewAnnual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerTypeHouse"
+        android:layout_width="229dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewTypeHouse"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtViewTypeHouse"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerTypeHouse"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewValueHouse"
+        android:layout_width="124dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/txtViewValueHouse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewTypeHouse" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="119dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/btnCalculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/ptxtValue"
+        android:layout_width="229dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
