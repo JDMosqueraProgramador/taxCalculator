@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch(view.getId()) {
             case R.id.btnPropietyTax:
-                //cls = RetentionActivity.class;
+                cls = PropietyTaxActivity.class;
                 break;
 
             case R.id.btnRetention:
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btnVehicule:
-                //cls = RetentionActivity.class;
+                cls = VehicleActivity.class;
                 break;
         }
 
