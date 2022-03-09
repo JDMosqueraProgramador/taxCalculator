@@ -1,10 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".RetentionActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RetentionActivity">
 
+    <TextView
+        android:id="@+id/txtBaseUVT"
+        android:layout_width="203dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtVBaseUVT"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumberPrice" />
+
+    <TextView
+        android:id="@+id/txtBaseMinimaPesos"
+        android:layout_width="203dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txtVBaseMinimaPesos"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBaseUVT" />
+
+    <TextView
+        android:id="@+id/txtPorcentajeRetencion"
+        android:layout_width="203dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txtVPorcentajeRetencion"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBaseMinimaPesos" />
+
+    <Button
+        android:id="@+id/btnCalculateRetention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="calculateRetention"
+        android:text="@string/btnCalculatorRetention"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMensajeSalidaRetencion" />
+
+    <Spinner
+        android:id="@+id/spinnerRetentionConcept"
+        android:layout_width="360dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNumberPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRetentionConcept" />
+
+    <TextView
+        android:id="@+id/txtMensajeSalidaRetencion"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtMensajeSalidaRetencion"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPorcentajeRetencion" />
 </androidx.constraintlayout.widget.ConstraintLayout>
