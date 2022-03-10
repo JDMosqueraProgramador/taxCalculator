@@ -19,8 +19,9 @@ public class PropietyTaxActivity extends AppCompatActivity {
     double [] rate;
 
     EditText value;
-    private Spinner typeSpinner;
-    TextView txtSalida;
+    public Spinner typeSpinner;
+    TextView txtAnnual;
+    TextView txtTrimester;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +30,19 @@ public class PropietyTaxActivity extends AppCompatActivity {
 
         value  = (EditText) findViewById(R.id.ptxtValue);
         typeSpinner = (Spinner) findViewById(R.id.spinnerTypeHouse);
-        txtSalida = (TextView) findViewById(R.id.txtViewAnnual);
+        txtAnnual = (TextView) findViewById(R.id.txtViewAnnual);
+        txtTrimester = (TextView) findViewById(R.id.txtViewTrimester);
 
         rangeMax = new int[] {124150000,132299000,152306000,172315000,192322000,212330000,232338000,252345000,285691000,319039000,
-        352384000,385730000,419077000,452423000,485769000,519116000,552462000,599147000,645832000,692515000,739202000,785885000,
-        832570000,879255000,925940000,1092671000,1259404000,1426135000,1600622000,1600622001};
+                352384000,385730000,419077000,452423000,485769000,519116000,552462000,599147000,645832000,692515000,739202000,785885000,
+                832570000,879255000,925940000,1092671000,1259404000,1426135000,1600622000,1600622001};
 
         rangeMin = new int[] {0,124150001,132299001,152306001,172315001,192322001,212330001,232338001,252345001,285691001,319039001,
                 352384001,385730001,419077001,452423001,485769001,519116001,552462001,599147001,645832001,692515001,739202001,785885001,
                 832570001,879255001,925940001,1092671001,1259404001,1426135001,1600622001};
 
         rate = new double []{5.5,5.6,5.7,5.8,5.9,6.0,6.1,6.2,6.3,6.4,6.5,6.6,6.8,7.0,7.2,7.4,7.6,7.8,8.0,8.2,8.4,8.6,8.8,9.0,9.2,
-        9.5,9.9,10.3,10.8,11.3};
+                9.5,9.9,10.3,10.8,11.3};
 
         ArrayList<String> typeProperty = new ArrayList<String>();
         typeProperty.add("Residencia");
@@ -54,7 +56,7 @@ public class PropietyTaxActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 String element = (String) typeSpinner.getAdapter().getItem(position);
-                Toast.makeText(PropietyTaxActivity.this,"Seleccionaste" + element, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PropietyTaxActivity.this,"Seleccionaste " + element, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -65,23 +67,98 @@ public class PropietyTaxActivity extends AppCompatActivity {
     }
 
     public void findValuePropierty(View view){
+
         int arrayIndex = typeSpinner.getSelectedItemPosition();
-        double eigenValue = Double.parseDouble(value.getText().toString());
+        int eigenValue = Integer.parseInt(value.getText().toString());
+
         double result = 0;
-        double subTotal = 0;
+        double subTotal;
+        double resultAnnual = 0;
 
         switch (arrayIndex){
 
             case 0:
-                if ((eigenValue>=rangeMin[0]) && (eigenValue>=rangeMax[0])) {
 
-                    subTotal = eigenValue * rate[0];
-                    result = subTotal / 1000;
-                    txtSalida.setText(String.valueOf(result));
+                for (int i=0; i < rangeMin.length;i++){
 
+                    if ((eigenValue >= rangeMin[i]) && (eigenValue < rangeMax[i])){
+
+                        subTotal = eigenValue * rate[i];
+                        result = subTotal / 1000;
+                        resultAnnual = result - (result * 0.10);
+
+                        break;
+
+                    }else if (eigenValue > 1600621999){
+
+                        subTotal = eigenValue * rate[i];
+                        result = subTotal / 1000;
+                        resultAnnual = result - (result * 0.10);
+
+                    }
                 }
+
+                txtAnnual.setText(String.valueOf(resultAnnual));
+                txtTrimester.setText(String.valueOf(result));
+
                 break;
 
+            case 1:
+
+                if(eigenValue <= 232090000){
+
+                    subTotal = eigenValue * 8;
+                    result = subTotal / 1000;
+                    resultAnnual = result - (result * 0.10);
+
+                    txtAnnual.setText(String.valueOf(resultAnnual));
+                    txtTrimester.setText(String.valueOf(result));
+
+                    break;
+
+                } else if (eigenValue > 232090000){
+
+                    subTotal = eigenValue * 9.5;
+                    result = subTotal / 1000;
+                    resultAnnual = result - (result * 0.10);
+
+                    txtAnnual.setText(String.valueOf(resultAnnual));
+                    txtTrimester.setText(String.valueOf(result));
+
+                    break;
+                }
+
+                break;
+
+            case 2:
+
+                if(eigenValue <= 5517000){
+
+                    subTotal = eigenValue * 5;
+                    result = subTotal / 1000;
+                    resultAnnual = result - (result * 0.10);
+
+                    txtAnnual.setText(String.valueOf(resultAnnual));
+                    txtTrimester.setText(String.valueOf(result));
+
+                    break;
+
+                } else if (eigenValue > 5517001){
+
+                    subTotal = eigenValue * 8;
+                    result = subTotal / 1000;
+                    resultAnnual = result - (result * 0.10);
+
+                    txtAnnual.setText(String.valueOf(resultAnnual));
+                    txtTrimester.setText(String.valueOf(result));
+
+                    break;
+                }
+
+                break;
+            default:
+                txtAnnual.setText(String.valueOf("El valor ingresado fue incorrecto."));
+                txtTrimester.setText(String.valueOf("El valor ingresado fue incorrecto."));
 
         }
 

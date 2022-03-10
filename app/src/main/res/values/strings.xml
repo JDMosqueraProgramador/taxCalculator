@@ -13,8 +13,8 @@
     <string name="txtMensajeSalidaRetencion">La retencion es de</string>
     <string name="txtViewTypeHouse">Tipo de predio</string>
     <string name="txtViewValueHouse">Valor</string>
-    <string name="tv1">Valor a pagar Trimestral</string>
-    <string name="tv2">Valor a pagar Anual</string>
+    <string name="tv1">Valor a pagar Trimestral es de: </string>
+    <string name="tv2">Valor a pagar Anual con descuento es de:</string>
     <string name="btnCalculate">Calcular predial</string>
     <string name="txtViewTrimester">Calcular predial</string>
     <string name="txtViewAnnual">Calcular predial</string>
