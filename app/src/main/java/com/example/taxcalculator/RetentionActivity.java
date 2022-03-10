@@ -45,7 +45,6 @@ public class RetentionActivity extends AppCompatActivity {
 
         spinnerRetention.setAdapter(adapter);
 
-
         txtBaseUVT = (TextView) findViewById(R.id.txtBaseUVT);
         txtBaseMinimaPesos = (TextView) findViewById(R.id.txtBaseMinimaPesos);
         txtPorcentajeRetencion = (TextView) findViewById(R.id.txtPorcentajeRetencion);
@@ -60,94 +59,51 @@ public class RetentionActivity extends AppCompatActivity {
 
         switch (indice){
             case 0:
-
-                txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[0]));
-                txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[0] * 100) + "%");
-                txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[0]);
-
-                 price = Double.parseDouble(txtCantidad.getText().toString());
-
-                if(price <= basePesos[0]){
-
-                    Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
-                    retencion = 0;
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }else{
-                    retencion = price * porcentajeRetencion[0];
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }
+                calculateRetention(0);
                 break;
 
             case 1:
-                txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[1]));
-                txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[1] * 100) + "%");
-                txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[1]);
-
-                 price = Double.parseDouble(txtCantidad.getText().toString());
-                if(price <= basePesos[1]){
-
-                    Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
-                    retencion = 0;
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }else{
-                    retencion = price * porcentajeRetencion[1];
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }
+                calculateRetention(1);
                 break;
 
+
             case 2:
-                txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[2]));
-                txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[2] * 100) + "%");
-                txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[2]);
-
-                price = Double.parseDouble(txtCantidad.getText().toString());
-                if(price <= basePesos[2]){
-
-                    Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
-                    retencion = 0;
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }else{
-                    retencion = price * porcentajeRetencion[2];
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }
-
+                calculateRetention(2);
                 break;
             case 3:
 
-                txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[3]));
-                txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[3] * 100) + "%");
-                txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[2]);
-
-                price = Double.parseDouble(txtCantidad.getText().toString());
-                if(price <= basePesos[3]){
-
-                    Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
-                    retencion = 0;
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }else{
-                    retencion = price * porcentajeRetencion[3];
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }
-
+                calculateRetention(3);
                 break;
             case 4:
 
-                txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[4]));
-                txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[4] * 100) + "%");
-                txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[4]);
-
-                price = Double.parseDouble(txtCantidad.getText().toString());
-                if(price <= basePesos[4]){
-
-                    Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
-                    retencion = 0;
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }else{
-                    retencion = price * porcentajeRetencion[4];
-                    txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
-                }
+                calculateRetention(4);
                 break;
         }
+
+    }
+
+    public void calculateRetention(int indice){
+
+        txtBaseUVT.setText("La base UVT es de: " + Integer.toString(UVT[indice]));
+        txtPorcentajeRetencion.setText("El porcentaje de retencion es de : " + Double.toString(porcentajeRetencion[indice] * 100) + "%");
+        txtBaseMinimaPesos.setText("La base minima para este concepto es de: " + basePesos[indice]);
+        try {
+            price = Double.parseDouble(txtCantidad.getText().toString());
+
+            if(price <= basePesos[indice]){
+
+                Toast.makeText(getApplicationContext(),"El precio debe ser mayor a la base minima para calcular la retencion", Toast.LENGTH_LONG).show();
+                retencion = 0;
+                txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
+            }else{
+                retencion = price * porcentajeRetencion[4];
+                txtMensajeSalidaRetencion.setText("La retencion es de : " + retencion);
+            }
+
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"El valor agregado es incorrecto, por favor ingrese un valor valido", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 }

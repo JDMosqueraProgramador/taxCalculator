@@ -18,4 +18,13 @@
     <string name="btnCalculate">Calcular predial</string>
     <string name="txtViewTrimester">Calcular predial</string>
     <string name="txtViewAnnual">Calcular predial</string>
+    <string name="tvVehicle">Impuesto vehicular</string>
+    <string name="tvVehicleDesc">Por favor, seleccione los datos de su vehículo:</string>
+    <string name="tvTypeVehicle">Tipo de vehículo</string>
+    <string name="tvService">Servicio del vehículo:</string>
+    <string name="tvValueVehicle">Avalúo del vehículo:</string>
+    <string name="btnCalculateTaxVehicle">Calcular impuestos</string>
+    <string name="tvDesValue">El valor de impuestos a pagar es de:</string>
+    <string name="tvValueDefault">$0</string>
+
 </resources>

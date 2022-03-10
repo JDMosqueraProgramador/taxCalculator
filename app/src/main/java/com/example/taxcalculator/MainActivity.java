@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btnVehicule:
-                //cls = RetentionActivity.class;
+                cls = VehicleActivity.class;
                 break;
         }
 
